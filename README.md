@@ -1,8 +1,6 @@
 
 # FigmaClient
 
-by **Beddup**
-
 ## What is FigmaClient
 
 Figma Client is a simple plugin to 
@@ -10,7 +8,7 @@ Figma Client is a simple plugin to
 - Download figma node image
 
 
-## Installation with Unity Package Manager
+## Installation
 
 Just add this line to the `Packages/manifest.json` file of your Unity Project:
 
@@ -21,6 +19,8 @@ Just add this line to the `Packages/manifest.json` file of your Unity Project:
   }
 }
 ```
+
+You can also download the source code directly and import it into your Unity project.
 
 ## Need a access figma token to fetch the data
 
