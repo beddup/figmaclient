@@ -12,10 +12,11 @@ namespace FigmaClient
         public string name;
         public bool visible = true;
         public string type;
-
+        
         public string componentId;
         public ComponentOverrides[] overrides;
-        
+
+        public float opacity = 1.0f;
         // public string blendMode; 
         public Node[] children;
         public AbsoluteBoundingBox absoluteBoundingBox; // done
@@ -34,7 +35,7 @@ namespace FigmaClient
 
         public string characters; // text 
         public Style style; // text style
-
+        
         public bool HasChildren => children != null && children.Length > 0;
 
 
@@ -74,7 +75,7 @@ namespace FigmaClient
             {
                 if (fill.visible && fill.renderType == Fill.FillRenderType.Color)
                 {
-                    return fill.color.ToColor();
+                    return fill.ToColor();
                 }
             }
             return UnityEngine.Color.clear;
@@ -195,7 +196,7 @@ namespace FigmaClient
     {
         // https://help.figma.com/hc/en-us/articles/360041003694-Guide-to-fills
         // Fills can be solid colors, gradients, patterns, images, or videos (type)
-        public float opacity = 1; 
+        public float opacity = 1.0f; 
         public string blendMode;
         public bool visible = true;
         public string type;
@@ -228,17 +229,13 @@ namespace FigmaClient
                 return FillRenderType.Image;
             }
         }
-        
-        
+
         public UnityEngine.Color ToColor()
         {
             if (IsColorFill())
             {
                 var c = color.ToColor();
-                if (opacity != 1)
-                {
-                    c.a = opacity;
-                }
+                c.a = c.a * opacity;
                 return c;
             }
             else
