@@ -75,7 +75,7 @@ namespace FigmaClient
             {
                 if (fill.visible && fill.renderType == Fill.FillRenderType.Color)
                 {
-                    return fill.ToColor();
+                    return fill.FillColor();
                 }
             }
             return UnityEngine.Color.clear;
@@ -112,9 +112,9 @@ namespace FigmaClient
             return strokeWeight > 0 && strokes.Any(item => item.visible && item.opacity > 0 && item.type != "SOLID");
         }
         
-        public Fill GetSolidColorOutline()
+        public Fill GetSolidColorOutlineFill()
         {
-            var outlines = GetValidSolidColorOutlines();
+            var outlines = GetValidSolidColorOutlinesFills();
             if (outlines.Count > 0)
             {
                 return outlines[0];
@@ -122,7 +122,7 @@ namespace FigmaClient
             return null;
         }
         
-        public List<Fill> GetValidSolidColorOutlines()
+        public List<Fill> GetValidSolidColorOutlinesFills()
         {
             if (strokeWeight <= 0) return new List<Fill>();
             return strokes.Where(item => item.visible && item.opacity > 0 && item.type == "SOLID").ToList();
@@ -230,18 +230,11 @@ namespace FigmaClient
             }
         }
 
-        public UnityEngine.Color ToColor()
+        public UnityEngine.Color FillColor()
         {
-            if (IsColorFill())
-            {
-                var c = color.ToColor();
-                c.a = c.a * opacity;
-                return c;
-            }
-            else
-            {
-                return new UnityEngine.Color(1,1,1, opacity);
-            }
+            var c = color.ToColor();
+            c.a = c.a * opacity;
+            return c;
         }
     }
     [Serializable]
