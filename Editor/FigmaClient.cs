@@ -47,7 +47,8 @@ namespace FigmaClient
             string url = string.Format(ImagesUrl, fileKey, ids);
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             request.Headers.Add("X-Figma-Token", token);
-            Debug.Log($"start get batch image download urls, {nodeIds} ids");
+            
+            Debug.Log($"start get batch image download urls, {string.Join(",", nodeIds)} ids, with token {token.Substring(0,6)}...");
             HttpResponseMessage response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {
