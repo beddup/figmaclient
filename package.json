@@ -1,7 +1,7 @@
 {
     "name": "com.beddup.figmaclient",
     "displayName": "FigmaClient",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "unity": "2019.3",
     "description": "You can use FigmaClient to fetch figma design node data and download node image",
     "author": {

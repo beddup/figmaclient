@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FigmaClient
+namespace FigmaClient.Editor
 {
     [Serializable]
     public class Node

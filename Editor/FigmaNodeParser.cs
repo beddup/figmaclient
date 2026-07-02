@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace FigmaClient
+namespace FigmaClient.Editor
 {
     public class FigmaNodeParser
     {

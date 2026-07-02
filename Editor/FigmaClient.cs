@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace FigmaClient
+namespace FigmaClient.Editor
 {
     public class Client
     {

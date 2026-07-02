@@ -1,6 +1,6 @@
 {
-    "name": "Figma.Client",
-    "rootNamespace": "",
+    "name": "FigmaClient.Editor",
+    "rootNamespace": "FigmaClient.Editor",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
