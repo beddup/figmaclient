@@ -10,17 +10,13 @@ Figma Client is a simple plugin to
 
 ## Installation
 
-Just add this line to the `Packages/manifest.json` file of your Unity Project:
+Install [OpenUPM CLI](https://openupm.com/docs/getting-started.html), then run:
 
-```json
-{
-  "dependencies": {
-    "com.beddup.figmaclient": "https://github.com/beddup/figmaclient.git"
-  }
-}
+```bash
+openupm add com.beddup.figmaclient
 ```
 
-You can also download the source code directly and import it into your Unity project.
+or You can also download the source code directly and import it into your Unity project.
 
 ## Need a access figma token to fetch the data
 
