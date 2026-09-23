@@ -307,6 +307,7 @@ namespace FigmaClient.Editor
     {
         public string fontFamily;
         public string fontPostScriptName;
+        public string fontStyle;
         public int fontWeight;
         public float fontSize;
         public string textAlignHorizontal;
